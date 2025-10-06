@@ -1,0 +1,117 @@
+/* GLOBAL STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    color: #333; /* Default text color */
+    
+    /* CAR BACKGROUND IMAGE STYLING */
+    /* Make sure you have a 'car_admin_bg.jpg' image in the same folder as style.css */
+    background-image: url('car_admin_bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* SIDEBAR STYLING */
+.sidebar {
+    width: 280px;
+    background-color: rgba(28, 38, 50, 0.95); /* Darker, slightly transparent for sleekness */
+    color: #ecf0f1;
+    padding: 30px 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #e74c3c; /* A striking red, common in car branding */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.nav-menu {
+    width: 100%;
+}
+.nav-menu .nav-item {
+    display: block;
+    padding: 18px 25px;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-left 0.3s ease;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.nav-menu .nav-item:hover,
+.nav-menu .nav-item.active {
+    background-color: rgba(52, 73, 94, 0.8); /* Darker hover */
+    color: #ffffff;
+    border-left: 6px solid #e74c3c; /* Red highlight */
+    font-weight: 600;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.92); /* More opaque white for readability */
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 20px; /* Space from edges */
+}
+.page-header {
+    margin-bottom: 50px;
+    color: #2c3e50;
+    border-bottom: 2px solid #e74c3c; /* Red underline */
+    padding-bottom: 15px;
+}
+.page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    margin: 0;
+    color: #34495e;
+}
+.page-header p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* ADMIN SECTIONS & FORMS */
+.admin-section {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    border-top: 4px solid #e74c3c; /* Subtle red top border */
+}
+.admin-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.05em;
+}
+

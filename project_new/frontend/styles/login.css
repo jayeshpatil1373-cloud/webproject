@@ -1,0 +1,66 @@
+main {    min-height: 100vh;             /* full height */
+    display: flex;
+    justify-content: center;       /* horizontal center */
+    align-items: center;           /* vertical center */
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 320px;
+}
+
+.form-box {
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-image: url('/kedarnath.jpg');
+    background-size: cover;
+    border: none;
+    border-radius: 8px;
+    color: rgb(22, 188, 238);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-image: url('/kedarnath.jpg');
+    background-size: cover;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    background-image: url('/https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fcity-night-sky&psig=AOvVaw35XKi8QvaJ2krspjFKwH-e&ust=1759237846777000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPiM6-qF_o8DFQAAAAAdAAAAABAL');
+    background-size: cover;
+    text-decoration: none;
+    cursor: pointer;
+}

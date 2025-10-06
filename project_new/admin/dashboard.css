@@ -1,0 +1,344 @@
+
+/* GLOBAL STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    color: #333;
+    
+    /* BACKGROUND IMAGE STYLING: Replace 'travel_car_bg.jpg' with your actual image path or a URL */
+    /* For local file testing, you might need to use a data URI or keep it as a separate file. */
+    /* Assuming 'travel_car_bg.jpg' is in the same directory for this CSS to work. */
+    background-image: url('travel_car_bg.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* SIDEBAR STYLING */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(to bottom, rgba(30, 45, 60, 0.98), rgba(20, 30, 40, 0.98)); /* Dark, subtle gradient */
+    color: #ecf0f1;
+    padding: 30px 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #5DADE2; /* Blue, evocative of travel */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.nav-menu {
+    flex-grow: 1;
+    width: 100%;
+}
+.nav-menu .nav-item {
+    display: block;
+    padding: 18px 25px;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-left 0.3s ease;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+}
+.nav-menu .nav-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    transition: left 0.3s ease-out;
+}
+.nav-menu .nav-item:hover:before {
+    left: 0;
+}
+.nav-menu .nav-item:hover,
+.nav-menu .nav-item.active {
+    background-color: rgba(60, 75, 90, 0.8);
+    color: #ffffff;
+    border-left: 6px solid #5DADE2; /* Blue highlight */
+    font-weight: 600;
+}
+.sidebar-footer {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+.sidebar-footer .logout {
+    color: #e74c3c; /* Red for logout */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.sidebar-footer .logout:hover {
+    background-color: rgba(231, 76, 60, 0.2);
+}
+
+
+/* MAIN CONTENT AREA */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Nearly opaque white for readability */
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    margin: 25px;
+    overflow-y: auto;
+}
+.page-header {
+    margin-bottom: 50px;
+    color: #2c3e50;
+    border-bottom: 2px solid #5DADE2; /* Blue underline */
+    padding-bottom: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4em;
+    margin: 0;
+    color: #34495e;
+    letter-spacing: 0.5px;
+}
+.page-header p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin-top: 8px;
+}
+
+/* ADMIN SECTIONS & FORMS */
+.admin-section {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    border-top: 4px solid #5DADE2; /* Blue top border */
+}
+.admin-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #34495e;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.form-group {
+    margin-bottom: 0;
+}
+.form-group.full-width {
+    grid-column: 1 / -1; /* Spans full width */
+}
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.05em;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #5DADE2; /* Blue focus border */
+    box-shadow: 0 0 8px rgba(93, 173, 226, 0.3);
+    outline: none;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: #2ecc71; /* Green for add/confirm actions */
+    color: white;
+}
+.btn-secondary {
+    background-color: #5DADE2; /* Blue for filter/view actions */
+    color: white;
+}
+.btn-primary:hover, .btn-secondary:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* DASHBOARD CARDS */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.card {
+    background-color: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-left: 5px solid #5DADE2; /* Blue accent */
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.3em;
+}
+.card-value {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #5DADE2;
+    margin-top: 10px;
+}
+.card-value.highlight {
+    color: #e74c3c; /* Red for urgent items like pending bookings */
+}
+
+
+/* DATE FILTER STYLING */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.form-group-inline {
+    flex: 1 1 auto;
+    min-width: 180px;
+}
+
+/* REPORT TABLE STYLING */
+.report-table-container {
+    overflow-x: auto;
+}
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.report-table th, .report-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.report-table th {
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.8px;
+}
+.report-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(93, 173, 226, 0), rgba(93, 173, 226, 0.7), rgba(93, 173, 226, 0));
+    margin: 50px 0;
+}
+
+/* Responsive adjustments (optional but recommended) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .main-content {
+        margin: 10px;
+        padding: 25px;
+    }
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-menu .nav-item {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 12px 15px;
+        border-left: none !important;
+        border-bottom: 3px solid transparent;
+    }
+    .nav-menu .nav-item:hover,
+    .nav-menu .nav-item.active {
+        border-left: none !important;
+        border-bottom: 3px solid #5DADE2;
+    }
+    .sidebar-footer {
+        display: none;
+    }
+    .form-grid {
+        /* grid-template-columns: 1fr; */
+    }
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
